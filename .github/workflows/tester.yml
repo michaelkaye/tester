@@ -19,8 +19,8 @@ jobs:
       with: 
         uploadLogs: true
         httpPort: 8008
-      customConfig: |
-        registration_shared_secret: RegistrationSharedSecret
+        customConfig: |
+          registration_shared_secret: RegistrationSharedSecret
     - name: timed test setup
       run: synapse/env/bin/pip install -r requirements.txt
     - name: create user
