@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -x
-INITIAL_CPU="`cat /proc/stat | grep 'cpu '`"
+#INITIAL_CPU="`cat /proc/stat | grep 'cpu '`"
 RESULT_CPU="`cat /proc/stat | grep 'cpu '`"
 
 show() {
