@@ -1,0 +1,29 @@
+name: "tests"
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: report cpu
+      run: "cat /proc/stat | grep cpu"
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.x"
+    - name: Run synapse
+      uses: michaelkaye/setup-matrix-synapse
+      with: 
+        uploadLogs: true
+        httpPort: 8008
+      customConfig: |
+        registration_shared_secret: RegistrationSharedSecret
+    - name: timed test setup
+      run: synapse/env/bin/pip install -r requirements.txt
+    - name: synapse/env/bin/register_new_matrix_user.py -u tester -p password --no-admin -k RegistrationSharedSecret
+    - name: timed test
+      run: synapse/env/bin/python ./timed_test.py
+
