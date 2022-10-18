@@ -28,5 +28,5 @@ jobs:
     - name: timed test
       run: synapse/env/bin/python ./timed_test.py
     - name: report cpu after
-      run: 'cat /proc/stat | grep "cpu "; echo $INITIAL_CPU'
+      run: "./eval_cpu.sh'
 
