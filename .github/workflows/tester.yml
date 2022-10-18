@@ -26,7 +26,13 @@ jobs:
       run: synapse/env/bin/pip install -r requirements.txt
     - name: create user
       run: synapse/env/bin/register_new_matrix_user -u tester -p password --no-admin -k RegistrationSharedSecret http://localhost:8008
-    - name: timed test
+    - name: timed One
+      run: synapse/env/bin/python ./timed_test.py
+    - name: timed Two
+      run: synapse/env/bin/python ./timed_test.py
+    - name: timed Three
+      run: synapse/env/bin/python ./timed_test.py
+    - name: timed Four
       run: synapse/env/bin/python ./timed_test.py
     - name: report cpu after
       run: "./eval_cpu.sh"

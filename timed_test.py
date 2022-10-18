@@ -24,8 +24,7 @@ async def main() -> None:
     print(response)
     room_id = response.room_id
     before = datetime.now()
-    for id in range(1000):
-       # just going to wait.
+    for id in range(10000):
        await client.room_send(
            room_id=room_id,
            message_type="m.room.message",
@@ -33,7 +32,7 @@ async def main() -> None:
                     "body": f"test_ {id}"
            }
        )
-       if (id % 10 == 0):
+       if (id % 100 == 0):
          print(f"now at {id}")
     after = datetime.now()
     print(after - before)
