@@ -36,7 +36,7 @@ async def main() -> None:
        if (id % 10 == 0):
          print(f"now at {id}")
     after = datetime.now()
-    print(before - after)
+    print(after - before)
     
 
 asyncio.get_event_loop().run_until_complete(main())
