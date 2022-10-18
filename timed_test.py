@@ -12,7 +12,8 @@ from datetime import datetime
 from nio import AsyncClient, MatrixRoom, RoomMessageText
 from nio.responses import RoomCreateResponse, RoomCreateError
 
-async def message_callback(room: MatrixRoom, event: RoomMessageText) -> None
+async def message_callback(room: MatrixRoom, event: RoomMessageText) -> None:
+    print("Saw message")
 
 
 async def main() -> None:
