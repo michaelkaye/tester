@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: report cpu
-      run: "cat /proc/stat | grep cpu"
+      run: 'cat /proc/stat'
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
