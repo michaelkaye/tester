@@ -3,7 +3,8 @@ on:
   push:
     branches: 
       - main
-
+  schedule:
+    - cron: "57 * * * *" # build on the 57th minute of each hour
 jobs:
   test:
     runs-on: ubuntu-latest
