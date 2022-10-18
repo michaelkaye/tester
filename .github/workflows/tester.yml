@@ -28,5 +28,5 @@ jobs:
     - name: timed test
       run: synapse/env/bin/python ./timed_test.py
     - name: report cpu after
-      run: "./eval_cpu.sh'
+      run: "./eval_cpu.sh"
 
