@@ -23,7 +23,8 @@ jobs:
         registration_shared_secret: RegistrationSharedSecret
     - name: timed test setup
       run: synapse/env/bin/pip install -r requirements.txt
-    - name: synapse/env/bin/register_new_matrix_user.py -u tester -p password --no-admin -k RegistrationSharedSecret
+    - name: create user
+      run: synapse/env/bin/register_new_matrix_user.py -u tester -p password --no-admin -k RegistrationSharedSecret
     - name: timed test
       run: synapse/env/bin/python ./timed_test.py
 
