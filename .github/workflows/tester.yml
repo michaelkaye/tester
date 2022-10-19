@@ -4,7 +4,7 @@ on:
     branches: 
       - main
   schedule:
-    - cron: "57 * * * *" # build on the 57th minute of each hour
+    - cron: "57 4 * * *" # build on the 57th minute of the 4th hour
 jobs:
   test:
     runs-on: ubuntu-latest
