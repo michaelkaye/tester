@@ -4,10 +4,10 @@ on:
     branches: 
       - main
   schedule:
-    - cron: "57 4 * * *" # build on the 57th minute of the 4th hour
+    - cron: "57 * * * *" # build on the 57th minute of the 4th hour
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: report cpu
       run: 'echo "INITIAL_CPU=`cat /proc/stat | grep "cpu "`" >> $GITHUB_ENV'
