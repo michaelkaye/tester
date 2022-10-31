@@ -7,7 +7,7 @@ on:
     - cron: "49 * * * *"
 jobs:
   test:
-    runs-on: macos
+    runs-on: macos-12
     steps:
     - name: report cpu
       run: 'echo "INITIAL_CPU=`cat /proc/stat | grep "cpu "`" >> $GITHUB_ENV'
