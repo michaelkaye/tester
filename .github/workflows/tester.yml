@@ -3,9 +3,11 @@ on:
   push:
     branches: 
       - main
+  schedule:
+    - cron: "49 * * * *"
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: macos
     steps:
     - name: report cpu
       run: 'echo "INITIAL_CPU=`cat /proc/stat | grep "cpu "`" >> $GITHUB_ENV'
