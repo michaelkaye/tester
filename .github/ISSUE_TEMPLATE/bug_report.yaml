@@ -1,6 +1,6 @@
 name: 🐞 Bug
-description: File a bug
-title: "[BUG] <title>"
+description: Bug report with a specific version of the operator and installer. 
+title: "<title>"
 labels: []
 body:
 - type: textarea
@@ -9,15 +9,24 @@ body:
     description: A concise description of what you're experiencing.
   validations:
     required: false
+- type: dropdown
+  attributes:
+    label: Installation type
+    options:
+      - QA Environment
+      - Local install
+      - Self-serve VM
+      - Customer
+      - Other
 - type: input
   attributes:
-    label: Operator version
+    label: Installer file version
     description: 
   validations:
     required: true
 - type: input
   attributes:
-    label: Installer version
+    label: Operator version
     description: 
   validations:
     required: true
@@ -43,6 +52,8 @@ body:
     label: Anything else?
     description: |
       Links? References? Anything that will give us more context about the issue you are encountering!
+
+      Tip: Record and add a video or take screenshots to ease explaination.
 
       Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
   validations:
